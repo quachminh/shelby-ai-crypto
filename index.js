@@ -1,17 +1,16 @@
-function analyzeProject(project){
+const { getAccountInfo } = require("./services/aptosData")
+const generateResearch = require("./services/aiResearch")
 
-console.log("Analyzing project:", project)
+async function run(){
 
-const result = {
-project: project,
-sentiment: "positive",
-risk: "medium",
-summary: "Project shows strong community growth."
-}
+const project = "Aptos"
 
-return result
-}
+const research = generateResearch(project)
 
-const research = analyzeProject("Aptos")
+console.log("AI Research Result")
 
 console.log(research)
+
+}
+
+run()
